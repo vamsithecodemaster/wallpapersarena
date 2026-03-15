@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MONOCHROME // Wallpapers</title>
+    
+    <!-- Fonts: Inter (Sans-Serif) and JetBrains Mono (Monospace) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <h1>MONOCHROME</h1>
+        <span class="badge">V.1.0</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#" class="active">Gallery</a>
+        <a href="#">About</a>
+        <a href="https://github.com" target="_blank" class="icon-link"><i data-lucide="github"></i></a>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="hero">
+        <h2 class="hero-title">HIGH-CONTRAST<br>AESTHETICS.</h2>
+        <p class="hero-subtitle">Curated black and white wallpapers for the modern digital workspace.</p>
+        <div class="stats-bar">
+          <div class="stat"><span class="label">STATUS :</span> <span class="value">ONLINE</span></div>
+          <div class="stat"><span class="label">IMAGES :</span> <span class="value" id="image-count">...</span></div>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="gallery-container">
+        <div class="grid" id="wallpaper-grid">
+          <!-- Wallpapers injected via JS -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 MONOCHROME. All rights reserved.</p>
+        <div class="footer-meta">
+          <span>// EST. 2026 //</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox hidden">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button id="lightbox-close" class="close-btn"><i data-lucide="x"></i></button>
+        <div class="lightbox-image-container">
+          <img id="lightbox-img" src="" alt="Full resolution wallpaper" />
+          <div class="loading-spinner"><i data-lucide="loader-2" class="spin"></i></div>
+        </div>
+        <div class="lightbox-details">
+          <h3 id="lightbox-title">Wallpaper Title</h3>
+          <p id="lightbox-res" class="mono-text">3840x2160</p>
+          <a id="lightbox-download" href="#" class="btn-primary" download>
+            <span>DOWNLOAD</span> <i data-lucide="download"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
