@@ -6,28 +6,28 @@ const wallpapers = [
     id: 'wp-01',
     title: 'Void Architecture',
     res: '2048x2048',
-    src: './public/wallpapers/bw_architecture.png',
+    src: '/wallpapers/bw_architecture.png',
     type: 'tall'
   },
   {
     id: 'wp-02',
     title: 'Monochromia',
     res: '2048x2048',
-    src: './public/wallpapers/bw_geometry.png',
+    src: '/wallpapers/bw_geometry.png',
     type: 'normal'
   },
   {
     id: 'wp-03',
     title: 'Silent Peaks',
     res: '2048x2048',
-    src: './public/wallpapers/bw_nature.png',
+    src: '/wallpapers/bw_nature.png',
     type: 'wide'
   },
   {
     id: 'wp-04',
     title: 'Dark Geometry',
     res: '2048x2048',
-    src: './public/wallpapers/bw_cyber.png',
+    src: '/wallpapers/bw_cyber.png',
     type: 'tall'
   }
 ];
@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render Grid
   const grid = document.getElementById('wallpaper-grid');
   
-  wallpapers.forEach((wp, index) => {
-    // Add delay for stagger animation (optional)
-    const card = document.createElement('div');
+  wallpapers.forEach((wp) => {
+    const card = document.createElement('button');
+    card.type = 'button';
     card.className = `wallpaper-card ${wp.type || ''}`;
     card.dataset.id = wp.id;
+    card.setAttribute('aria-label', `Open wallpaper: ${wp.title} (${wp.res})`);
     
     card.innerHTML = `
       <div class="img-wrapper">
