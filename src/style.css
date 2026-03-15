@@ -251,6 +251,10 @@ h1, h2, h3, h4 {
 }
 
 .wallpaper-card {
+  appearance: none;
+  padding: 0;
+  width: 100%;
+  text-align: inherit;
   border: var(--border-width) solid var(--color-accent-2);
   background-color: var(--color-surface);
   position: relative;
